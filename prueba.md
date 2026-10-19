@@ -2,4 +2,4 @@
 
 PR de prueba para Codepine.
 
-Logs estructurados.
+Logs estructurados, de nuevo.
