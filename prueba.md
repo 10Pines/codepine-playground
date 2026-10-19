@@ -2,4 +2,4 @@
 
 PR de prueba para Codepine.
 
-Primera Review.
+Logs estructurados.
