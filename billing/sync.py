@@ -9,5 +9,6 @@ def sync_invoices(client, invoices):
         try:
             client.push(invoice)
         except Exception:
-            pass
+            logger.exception("failed to sync invoice %s", invoice)
+            raise
     logger.info("synced %d invoices", len(invoices))
