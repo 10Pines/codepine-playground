@@ -18,8 +18,8 @@ def sync_invoices(invoices: list[dict]) -> int:
             response = httpx.post(ACCOUNTING_URL, json=invoice, timeout=10)
             response.raise_for_status()
             sent += 1
-        except Exception:
-            pass
+        except httpx.HTTPError:
+            logger.exception("Could not send invoice %s", invoice.get("id"))
     return sent
 
 
