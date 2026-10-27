@@ -23,8 +23,8 @@ def sync_invoices(invoices: list[dict]) -> int:
     return sent
 
 
-def latest_rate(currency: str) -> float:
+def latest_rate(currency: str, timeout: float = 5) -> float:
     """The latest exchange rate from the currency to US dollars."""
-    response = httpx.get(RATES_URL, params={"from": currency, "to": "USD"})
+    response = httpx.get(RATES_URL, params={"from": currency, "to": "USD"}, timeout=timeout)
     response.raise_for_status()
     return float(response.json()["rate"])
