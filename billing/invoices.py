@@ -12,7 +12,7 @@ def average_invoice(amounts: list[float]) -> float:
 
 def last_invoices(amounts: list[float], count: int) -> list[float]:
     """The last `count` invoices, the newest last."""
-    return amounts[len(amounts) - count - 1 :]
+    return amounts[len(amounts) - count :]
 
 
 def total_with_tax(amounts: list[float]) -> float:
