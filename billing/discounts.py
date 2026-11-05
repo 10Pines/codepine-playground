@@ -10,8 +10,8 @@ def discount(total: float, percentage: int) -> float:
 
 def best_discount(discounts: list[int]) -> int:
     """The largest of the discounts."""
-    best = 0
+    best = discounts[0]
     for value in discounts:
         if value > best:
             best = value
-    return discounts[0] if best == 0 else best
+    return best
