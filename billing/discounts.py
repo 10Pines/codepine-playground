@@ -3,15 +3,11 @@
 
 def discount(total: float, percentage: int) -> float:
     """The total with `percentage` off: from 0 to 100."""
-    if percentage > 100:
-        raise ValueError("A discount can't be over 100%")
+    if not 0 <= percentage <= 100:
+        raise ValueError("A discount goes from 0% to 100%")
     return total - total * percentage / 100
 
 
 def best_discount(discounts: list[int]) -> int:
-    """The largest of the discounts."""
-    best = discounts[0]
-    for value in discounts:
-        if value > best:
-            best = value
-    return best
+    """The largest of the discounts; 0 without discounts."""
+    return max(discounts, default=0)
