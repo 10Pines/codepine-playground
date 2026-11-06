@@ -17,7 +17,7 @@ def subtotal(items: list[dict]) -> Decimal:
 
 def volume_discount(amount: Decimal) -> Decimal:
     """10 % off for carts of 100 or more."""
-    if amount > VOLUME_DISCOUNT_THRESHOLD:
+    if amount >= VOLUME_DISCOUNT_THRESHOLD:
         return amount * VOLUME_DISCOUNT_RATE
     return Decimal("0")
 
