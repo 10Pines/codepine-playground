@@ -14,3 +14,7 @@ def test_total_without_discount_is_the_subtotal():
 
 def test_total_of_a_big_cart_has_the_volume_discount():
     assert total([{"price": 200, "quantity": 1}]) == Decimal("180")
+
+
+def test_a_cart_of_exactly_the_threshold_has_the_volume_discount():
+    assert total([{"price": 100, "quantity": 1}]) == Decimal("90")
